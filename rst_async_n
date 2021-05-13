@@ -1,3 +1,6 @@
+//////////////////
+//  main code   //
+//////////////////
 module rst_async_n(
     output  rst_async_n,
     
@@ -22,7 +25,9 @@ module rst_async_n(
     assign  rst_async_n  =   rst_s2;
     
 endmodule
-//TB
+///////////
+//  TB  //
+//////////
 module TB(
 
     );
