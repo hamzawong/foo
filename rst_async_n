@@ -1,0 +1,24 @@
+module rst_async_n(
+    output  rst_async_n,
+    
+    input   rst_n,
+    input   clk
+    );
+    
+    reg rst_s1;
+    reg rst_s2;
+    
+    always@(posedge clk or negedge rst_n) begin
+        if(!rst_n) begin
+            rst_s1  <=  1'b0;
+            rst_s2  <=  1'b0;
+        end
+        else begin
+            rst_s1  <=  1'b1;
+            rst_s2  <=  rst_s1;
+        end
+    end
+    
+    assign  rst_async_n  =   rst_s2;
+    
+endmodule
